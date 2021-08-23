@@ -29,7 +29,6 @@ namespace WindowsDesktop.Interop
 		[DllImport("api-ms-win-core-winrt-string-l1-1-0.dll", CallingConvention = CallingConvention.StdCall, ExactSpelling = true)]
 		private static extern int WindowsDeleteString(IntPtr hstring);
 
-
 		[DllImport("api-ms-win-core-winrt-string-l1-1-0.dll", CallingConvention = CallingConvention.StdCall, ExactSpelling = true, CharSet = CharSet.Unicode)]
 		private static extern IntPtr WindowsGetStringRawBuffer(HString hString, IntPtr length);
 
