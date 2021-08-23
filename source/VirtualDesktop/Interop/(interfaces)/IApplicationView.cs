@@ -5,7 +5,8 @@ namespace WindowsDesktop.Interop
 {
 	[ComImport]
 	[Guid("00000000-0000-0000-0000-000000000000") /* replace at runtime */]
-	[InterfaceType(ComInterfaceType.InterfaceIsIInspectable)]
+	//[InterfaceType(ComInterfaceType.InterfaceIsIInspectable)]
+	[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
 	public interface IApplicationView
 	{
 		int SetFocus();
