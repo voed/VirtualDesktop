@@ -20,7 +20,9 @@ jobs:
         dotnet-version: 5.0.x
         
     - name: Restore dependencies for VirtualDesktop
-      run: dotnet restore
+      run: |
+        cd source/VirtualDesktop
+        dotnet restore
     - name: Build VirtualDesktop
       run: |
         cd source/VirtualDesktop
