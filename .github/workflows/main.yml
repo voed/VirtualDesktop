@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - 'source/VirtualDesktop/**'
+      - 'source/VirtualDesktop.WinForms/**'
+      - 'source/VirtualDesktop.WPF/**'
 
 jobs:
   build:
@@ -16,13 +18,31 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Restore dependencies
+        
+    - name: Restore dependencies for VirtualDesktop
       run: dotnet restore
-    - name: Build
+    - name: Build VirtualDesktop
       run: |
         cd source/VirtualDesktop
         dotnet build --no-restore
+        
+    - name: Restore dependencies for VirtualDesktop.WinForms
+      run: |
+        cd source/VirtualDesktop.WinForms
+        dotnet restore 
+    - name: Build VirtualDesktop VirtualDesktop.WinForms
+      run: |
+        cd source/VirtualDesktop.WinForms
+        dotnet build --no-restore
     
+    - name: Restore dependencies for VirtualDesktop.WPF
+      run: |
+        cd source/VirtualDesktop.WPF
+        dotnet restore 
+    - name: Build VirtualDesktop VirtualDesktop.WPF
+      run: |
+        cd source/VirtualDesktop.WPF
+        dotnet build --no-restore
     #There's no tests for now
     #- name: Test
       #run: dotnet test --no-build --verbosity normal
