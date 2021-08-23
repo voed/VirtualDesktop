@@ -33,11 +33,11 @@ namespace WindowsDesktop.Interop
 
 		void Unknown1(IVirtualDesktop pDesktop, out IObjectArray pUnknown1, out IObjectArray pUnknown2);
 
-		void SetName(IVirtualDesktop pDesktop, [MarshalAs(UnmanagedType.HString)] string chName);
+		void SetName(IVirtualDesktop pDesktop, HString chName);
 
-		void SetWallpaperPath(IVirtualDesktop pDesktop, [MarshalAs(UnmanagedType.HString)] string chPath);
+		void SetWallpaperPath(IVirtualDesktop pDesktop, HString chPath);
 
-		void Unknown2([MarshalAs(UnmanagedType.HString)] string chText);
+		void Unknown2(HString chText);
 
 		void Unknown3(IApplicationView pUnknown0, IApplicationView pUnknown1);
 

@@ -18,7 +18,7 @@ namespace WindowsDesktop.Interop
 
 		void Unknown1(int nNumber);
 
-		void VirtualDesktopRenamed(IVirtualDesktop pDesktop, [MarshalAs(UnmanagedType.HString)] string chName);
+		void VirtualDesktopRenamed(IVirtualDesktop pDesktop, HString chName);
 
 		void ViewVirtualDesktopChanged(IApplicationView pView);
 
@@ -51,7 +51,7 @@ namespace WindowsDesktop.Interop
 		{
 		}
 
-		public void VirtualDesktopRenamed(IVirtualDesktop pDesktop, [MarshalAs(UnmanagedType.HString)] string chName)
+		public void VirtualDesktopRenamed(IVirtualDesktop pDesktop, HString chName)
 		{
 			this.VirtualDesktopRenamedCore(pDesktop, chName);
 		}
