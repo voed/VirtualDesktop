@@ -1,4 +1,4 @@
-name: .NET
+name: Main
 
 on: 
   push:
@@ -6,7 +6,6 @@ on:
       - 'source/VirtualDesktop/**'
       - 'source/VirtualDesktop.WinForms/**'
       - 'source/VirtualDesktop.WPF/**'
-      - '**' #for testing
 
 jobs:
   build:
