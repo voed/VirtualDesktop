@@ -6,11 +6,12 @@ on:
       - 'source/VirtualDesktop/**'
       - 'source/VirtualDesktop.WinForms/**'
       - 'source/VirtualDesktop.WPF/**'
+      - '**' #for testing
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
