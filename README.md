@@ -1,6 +1,6 @@
 ## VirtualDesktop
 .Net 5 version of 
-[VirtualDesktop](https://github.com/Grabacr07/VirtualDesktop). Based on [@mntone](https://github.com/mntone/VirtualDesktop)'s branch.
+[VirtualDesktop](https://github.com/Grabacr07/VirtualDesktop). Based on [@mntone](https://github.com/mntone/VirtualDesktop)'s branch. The original package needed some
 
 VirtualDesktop is C# wrapper for [IVirtualDesktopManager](https://msdn.microsoft.com/en-us/library/windows/desktop/mt186440%28v%3Dvs.85%29.aspx) on Windows 10.
 
