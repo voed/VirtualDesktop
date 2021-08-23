@@ -76,15 +76,15 @@ namespace WindowsDesktop
 			: base(assembly, comObject, latestVersion: 2)
 		{
 			this.Id = id;
-			
-			if (ProductInfo.OSBuild >= 20231 || this.ComVersion >= 2)
-			{
-				this._name = this.Invoke<HString>(Args(), "GetName");
 
-				if (ProductInfo.OSBuild >= 21313)
-				{
-					this._wallpaperPath = this.Invoke<HString>(Args(), "GetWallpaperPath");
-				}
+			if (ProductInfo.OSBuild < 20231 && this.ComVersion < 2)
+				return;
+
+			this._name = this.Invoke<HString>(Args(), "GetName");
+
+			if (ProductInfo.OSBuild >= 21313)
+			{
+				this._wallpaperPath = this.Invoke<HString>(Args(), "GetWallpaperPath");
 			}
 		}
 
