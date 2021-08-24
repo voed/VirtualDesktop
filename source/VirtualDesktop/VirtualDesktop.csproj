@@ -4,8 +4,7 @@
     <TargetFrameworks>net5.0-windows10.0.19041.0</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <RootNamespace>WindowsDesktop</RootNamespace>
-    <Version>5.0.1</Version>
-    <Authors>voed, Manato KAMEYA</Authors>
+	  <Authors>voed, Manato KAMEYA</Authors>
     <Description>C# wrapper for IVirtualDesktopManager on Windows 10. Net5 version.</Description>
     <Copyright>Copyright © 2021 voed</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -14,8 +13,7 @@
     <Product>VirtualDesktop.Net5</Product>
     <RootNamespace>WindowsDesktop</RootNamespace>
     <PackageTags>Windows;Windows10;Desktop;VirtualDesktop;net5</PackageTags>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>VirtualDesktop.Net5</PackageId>
+	  <PackageId>VirtualDesktop.Net5</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
