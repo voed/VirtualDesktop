@@ -56,13 +56,6 @@ jobs:
     runs-on: windows-latest  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
 
-    env:
-      Solution_Name: VirtualDesktop                                     # Replace with your solution name, i.e. MyWpfApp.sln.
-      #Test_Project_Path: your-test-project-path                        # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
-      Wap_Project_Directory: VirtualDesktop.Samples                     # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
-      Wap_Project_Path: VirtualDesktop.Showcase.wapproj                 # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
-      Wpf_Project_Path: samples\VirtualDesktop.Showcase\VirtualDesktop.Showcase.csproj
-
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -91,21 +84,10 @@ jobs:
       env:
         Configuration: ${{ matrix.configuration }}
 
-    # Create the app package by building and packaging the Windows Application Packaging project
-    - name: Create the app package
+    - name: Build the project
       run: |
         cd samples/VirtualDesktop.Showcase
         dotnet publish -o publish
       env:
         Configuration: ${{ matrix.configuration }}
 
-    # Remove the pfx
-    #- name: Remove the pfx
-    #  run: Remove-Item -path $env:Wap_Project_Directory\$env:Signing_Certificate
-
-    # Upload the MSIX package: https://github.com/marketplace/actions/upload-artifact
-    #- name: Upload build artifacts
-    #  uses: actions/upload-artifact@v2
-    #  with:
-     #   name: MSIX Package
-      #  path: ${{ env.Wap_Project_Directory }}\AppPackages
