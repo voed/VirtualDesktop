@@ -6,7 +6,7 @@
     <Version>5.0.0</Version>
     <Authors>voed, Manato KAMEYA</Authors>
     <Description>C# wrapper for IVirtualDesktopManager on Windows 10. Net5 version.</Description>
-    <Copyright>Copyright © 2020 Manato KAMEYA</Copyright>
+    <Copyright>Copyright © 2021 voed</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/voed/VirtualDesktop.Net5</PackageProjectUrl>
     <RepositoryUrl>https://github.com/voed/VirtualDesktop.Net5</RepositoryUrl>
