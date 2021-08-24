@@ -6,7 +6,6 @@ on:
     branches: [ master ]
     paths:
       - 'source/VirtualDesktop/**'
-      - 'source/VirtualDesktop.WinForms/**'
       - 'source/VirtualDesktop.WPF/**'
       - 'samples/VirtualDesktop.Showcase/**'
   pull_request:
