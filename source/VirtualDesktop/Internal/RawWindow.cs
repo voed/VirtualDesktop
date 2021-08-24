@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Interop;
 using System.Windows.Threading;
+using System.Windows;
 using WindowsDesktop.Interop;
 
 namespace WindowsDesktop.Internal
@@ -20,8 +21,12 @@ namespace WindowsDesktop.Internal
 
 		protected void Show(HwndSourceParameters parameters)
 		{
-			this.Source = new HwndSource(parameters);
-			this.Source.AddHook(this.WndProc);
+			Application.Current.Dispatcher.Invoke(() =>
+			{
+				this.Source = new HwndSource(parameters);
+				this.Source.AddHook(this.WndProc);
+			});
+
 		}
 
 		public virtual void Close()
