@@ -1,0 +1,27 @@
+{
+    "$schema": "https://raw.githubusercontent.com/AArnott/Nerdbank.GitVersioning/master/src/NerdBank.GitVersioning/version.schema.json",
+    "version": "5.0", // required (unless the "inherit" field is set to true and a parent version.json file sets this.)
+    "assemblyVersion": {
+      "version": "5.0", // optional. Use when x.y for AssemblyVersionAttribute differs from the default version property.
+      "precision": "revision" // optional. Use when you want a more precise assembly version than the default major.minor.
+    },
+    "versionHeightOffset": 2, // optional. Use when you need to add/subtract a fixed value from the computed version height.
+
+    "pathFilters": [
+        "/samples/VirtualDesktop.Showcase",
+        "/source"
+      // optional list of paths to consider when calculating version height.
+    ],
+    "publicReleaseRefSpec": [
+      "^refs/heads/master$" // we release out of master
+    ],
+    "cloudBuild": {
+      "setVersionVariables": true,
+      "buildNumber": {
+        "enabled": true,
+        "includeCommitId": {
+          "when": "nonPublicReleaseOnly"
+        }
+      }
+    }
+  }
