@@ -1,0 +1,92 @@
+name: Publish to NuGet
+on:
+  push:
+    branches:
+      - release/**
+    
+jobs:
+  publish:
+    name: build, pack & publish
+    runs-on: windows-latest
+   # env:
+     # NBGV_GitEngine: LibGit2
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          
+      - uses: dotnet/nbgv@master
+        with:
+          setAllVars: true
+
+      # Publish VirtualDesktop
+      - name: publish on version change
+        id: publish_nuget_main
+        uses: rohith/publish-nuget@v2
+        with:
+          # Filepath of the project to be packaged, relative to root of repository
+          PROJECT_FILE_PATH: source/VirtualDesktop/VirtualDesktop.csproj
+          
+          # NuGet package id, used for version detection & defaults to project name
+          PACKAGE_NAME: VirtualDesktop.Net5
+          
+          # Useful with external providers like Nerdbank.GitVersioning, ignores VERSION_FILE_PATH & VERSION_REGEX
+          VERSION_STATIC: ${{env.NBGV_SemVer2}}
+
+          # Flag to toggle git tagging, enabled by default
+          TAG_COMMIT: true
+
+          # Format of the git tag, [*] gets replaced with actual version
+          TAG_FORMAT: v*
+
+          # API key to authenticate with NuGet server
+          NUGET_KEY: ${{secrets.NugetAPIKey}}
+         
+      # Publish VirtualDesktop.WinForms
+      - name: publish on version change
+        id: publish_nuget_winforms
+        uses: rohith/publish-nuget@v2
+        with:
+          # Filepath of the project to be packaged, relative to root of repository
+          PROJECT_FILE_PATH: source/VirtualDesktop.WinForms/VirtualDesktop.WinForms.csproj
+          
+          # NuGet package id, used for version detection & defaults to project name
+          PACKAGE_NAME: VirtualDesktop.WinForms.Net5
+          
+          # Useful with external providers like Nerdbank.GitVersioning, ignores VERSION_FILE_PATH & VERSION_REGEX
+          VERSION_STATIC: ${{env.NBGV_SemVer2}}
+
+          # Flag to toggle git tagging, enabled by default
+          TAG_COMMIT: true
+
+          # Format of the git tag, [*] gets replaced with actual version
+          TAG_FORMAT: v*
+
+          # API key to authenticate with NuGet server
+          NUGET_KEY: ${{secrets.NugetAPIKey}}
+          
+      # Publish VirtualDesktop.WPF
+      - name: publish on version change
+        id: publish_nuget_wpf
+        uses: rohith/publish-nuget@v2
+        with:
+          # Filepath of the project to be packaged, relative to root of repository
+          PROJECT_FILE_PATH: source/VirtualDesktop.WPF/VirtualDesktop.WPF.csproj
+          
+          # NuGet package id, used for version detection & defaults to project name
+          PACKAGE_NAME: VirtualDesktop.WPF.Net5
+          
+          # Useful with external providers like Nerdbank.GitVersioning, ignores VERSION_FILE_PATH & VERSION_REGEX
+          VERSION_STATIC: ${{env.NBGV_SemVer2}}
+
+          # Flag to toggle git tagging, enabled by default
+          TAG_COMMIT: true
+
+          # Format of the git tag, [*] gets replaced with actual version
+          TAG_FORMAT: v*
+
+          # API key to authenticate with NuGet server
+          NUGET_KEY: ${{secrets.NugetAPIKey}}
+          
+          
+      
