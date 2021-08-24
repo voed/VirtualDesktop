@@ -1,4 +1,4 @@
-[![](https://buildstats.info/nuget/VirtualDesktop.Net5)](https://www.nuget.org/packages/VirtualDesktop.Net5/)
+[![Nuget](https://buildstats.info/nuget/VirtualDesktop.Net5)](https://www.nuget.org/packages/VirtualDesktop.Net5/)
 
 ## VirtualDesktop
 .Net 5 version of 
