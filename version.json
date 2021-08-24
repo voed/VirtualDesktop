@@ -12,7 +12,7 @@
         "/source"
     ],
     "publicReleaseRefSpec": [
-      "^refs/heads/master$" 
+      "^refs/heads/release/.*$" 
     ],
     "cloudBuild": {
       "setVersionVariables": true,
