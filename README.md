@@ -1,3 +1,5 @@
+[![](https://buildstats.info/nuget/VirtualDesktop.Net5)](https://www.nuget.org/packages/VirtualDesktop.Net5/)
+
 ## VirtualDesktop
 .Net 5 version of 
 [VirtualDesktop](https://github.com/Grabacr07/VirtualDesktop). Based on [@mntone](https://github.com/mntone/VirtualDesktop)'s branch.
