@@ -1,20 +1,18 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFrameworks>net5.0-windows10.0.19041.0</TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>4.0.1</Version>
-    <Authors>Manato KAMEYA</Authors>
-    <Company>grabacr.net</Company>
-    <Description>C# wrapper for IVirtualDesktopManager on Windows 10.</Description>
-    <Copyright>Copyright © 2020 Manato KAMEYA</Copyright>
+    <Authors>voed, Manato KAMEYA</Authors>
+    <Description>C# wrapper for IVirtualDesktopManager on Windows 10. Net5 version.</Description>
+    <Copyright>Copyright © 2021 voed</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/Grabacr07/VirtualDesktop</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Grabacr07/VirtualDesktop</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/voed/VirtualDesktop.Net5</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/voed/VirtualDesktop.Net5</RepositoryUrl>
     <Product>VirtualDesktop</Product>
     <RootNamespace>WindowsDesktop</RootNamespace>
-    <PackageTags>Windows;Windows10;Desktop;VirtualDesktop;</PackageTags>
+    <PackageTags>Windows;Windows10;Desktop;VirtualDesktop;net5</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
