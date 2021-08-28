@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - release/**
+    paths:
+      - source/**
     
 jobs:
   publish:
