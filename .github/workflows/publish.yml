@@ -22,7 +22,7 @@ jobs:
           setAllVars: true
 
       # Publish VirtualDesktop
-      - name: publish on version change
+      - name: Publish VirtualDesktop
         id: publish_nuget_main
         uses: rohith/publish-nuget@v2
         with:
@@ -45,7 +45,7 @@ jobs:
           NUGET_KEY: ${{secrets.NugetAPIKey}}
          
       # Publish VirtualDesktop.WinForms
-      - name: publish on version change
+      - name: Publish VirtualDesktop.WinForms
         id: publish_nuget_winforms
         uses: rohith/publish-nuget@v2
         with:
@@ -68,7 +68,7 @@ jobs:
           NUGET_KEY: ${{secrets.NugetAPIKey}}
           
       # Publish VirtualDesktop.WPF
-      - name: publish on version change
+      - name: Publish VirtualDesktop.WPF
         id: publish_nuget_wpf
         uses: rohith/publish-nuget@v2
         with:
