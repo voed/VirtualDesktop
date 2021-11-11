@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using System.Windows;
 
 namespace WindowsDesktop.Interop
 {
@@ -17,9 +16,17 @@ namespace WindowsDesktop.Interop
 
 		void VirtualDesktopDestroyed(IVirtualDesktop pDesktopDestroyed, IVirtualDesktop pDesktopFallback);
 
+		void Unknown1(int nNumber);
+
+		void VirtualDesktopMoved(IVirtualDesktop pDesktop, int nFromIndex, int nToIndex);
+
+		void VirtualDesktopRenamed(IVirtualDesktop pDesktop, [MarshalAs(UnmanagedType.HString)] string chName);
+
 		void ViewVirtualDesktopChanged(IApplicationView pView);
 
 		void CurrentVirtualDesktopChanged(IVirtualDesktop pDesktopOld, IVirtualDesktop pDesktopNew);
+
+		void VirtualDesktopWallpaperChanged(IVirtualDesktop pDesktop, [MarshalAs(UnmanagedType.HString)] string chPath);
 	}
 
 	public class VirtualDesktopNotificationListener : VirtualDesktopNotification, IVirtualDesktopNotification
@@ -44,15 +51,33 @@ namespace WindowsDesktop.Interop
 			this.VirtualDesktopDestroyedCore(pDesktopDestroyed, pDesktopFallback);
 		}
 
+		public void Unknown1(int nNumber)
+		{
+		}
+
+		public void VirtualDesktopMoved(IVirtualDesktop pDesktop, int nFromIndex, int nToIndex)
+		{
+			this.VirtualDesktopMovedCore(pDesktop, nFromIndex, nToIndex);
+		}
+
+		public void VirtualDesktopRenamed(IVirtualDesktop pDesktop, [MarshalAs(UnmanagedType.HString)] string chName)
+		{
+			this.VirtualDesktopRenamedCore(pDesktop, chName);
+		}
+
 		public void ViewVirtualDesktopChanged(IApplicationView pView)
 		{
 			this.ViewVirtualDesktopChangedCore(pView);
-			
 		}
 
 		public void CurrentVirtualDesktopChanged(IVirtualDesktop pDesktopOld, IVirtualDesktop pDesktopNew)
 		{
 			this.CurrentVirtualDesktopChangedCore(pDesktopOld, pDesktopNew);
+		}
+
+		public void VirtualDesktopWallpaperChanged(IVirtualDesktop pDesktop, [MarshalAs(UnmanagedType.HString)] string chName)
+		{
+			this.VirtualDesktopWallpaperChangedCore(pDesktop, chName);
 		}
 	}
 }

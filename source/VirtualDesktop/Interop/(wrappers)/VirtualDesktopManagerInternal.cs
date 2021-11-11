@@ -28,8 +28,8 @@ namespace WindowsDesktop.Interop
 
 		public abstract VirtualDesktop FindDesktop(Guid desktopId);
 
-		public abstract void SetName(VirtualDesktop desktop, HString name);
+		public abstract void SetDesktopName(VirtualDesktop desktop, HString name);
 
-		public abstract void SetWallpaperPath(VirtualDesktop desktop, HString path);
+		public abstract void SetDesktopWallpaper(VirtualDesktop desktop, HString path);
 	}
 }

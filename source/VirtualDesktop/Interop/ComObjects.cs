@@ -40,22 +40,14 @@ namespace WindowsDesktop.Interop
 			VirtualDesktopCache.Initialize(this._assembly);
 
 			this.VirtualDesktopManager = (IVirtualDesktopManager)Activator.CreateInstance(Type.GetTypeFromCLSID(CLSID.VirtualDesktopManager));
-			if (ProductInfo.OSBuild >= 21359)
+			this.VirtualDesktopManagerInternal = ProductInfo.OSBuild switch
 			{
-				this.VirtualDesktopManagerInternal = new VirtualDesktopManagerInternal21359(this._assembly);
-			}
-			else if (ProductInfo.OSBuild >= 21313)
-			{
-				this.VirtualDesktopManagerInternal = new VirtualDesktopManagerInternal21313(this._assembly);
-			}
-			else if (ProductInfo.OSBuild >= 20231)
-			{
-				this.VirtualDesktopManagerInternal = new VirtualDesktopManagerInternal20231(this._assembly);
-			}
-			else
-			{
-				this.VirtualDesktopManagerInternal = new VirtualDesktopManagerInternal10240(this._assembly);
-			}
+				>= 22449 => new VirtualDesktopManagerInternal22449(this._assembly),
+				>= 21359 => new VirtualDesktopManagerInternal21359(this._assembly),
+				>= 21313 => new VirtualDesktopManagerInternal21313(this._assembly),
+				>= 20231 => new VirtualDesktopManagerInternal20231(this._assembly),
+				_ => new VirtualDesktopManagerInternal10240(this._assembly)
+			};
 			this.VirtualDesktopNotificationService = new VirtualDesktopNotificationService(this._assembly);
 			this.VirtualDesktopPinnedApps = new VirtualDesktopPinnedApps(this._assembly);
 			this.ApplicationViewCollection = new ApplicationViewCollection(this._assembly);
