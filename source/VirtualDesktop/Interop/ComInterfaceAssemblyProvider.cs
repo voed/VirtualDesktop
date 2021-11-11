@@ -20,7 +20,7 @@ namespace WindowsDesktop.Interop
 		private static readonly Regex _assemblyRegex = new Regex(@"VirtualDesktop\.(?<build>\d{5}?)(\.\w*|)\.dll");
 		private static readonly string _defaultAssemblyDirectoryPath = Path.Combine(ProductInfo.LocalAppData.FullName, "assemblies");
 		private static readonly Version _requireVersion = new Version("1.0");
-		private static readonly int[] _interfaceVersions = new[] { 10240, 20231, 21313, 21359 };
+		private static readonly int[] _interfaceVersions = new[] { 10240, 20231, 21313, 21359, 22449 };
 
 		private readonly string _assemblyDirectoryPath;
 		
@@ -134,6 +134,7 @@ namespace WindowsDesktop.Interop
 			var syntaxTrees = sources.Select(x => SyntaxFactory.ParseSyntaxTree(x));
 			var references = AppDomain.CurrentDomain.GetAssemblies()
 				.Concat(new[] { Assembly.GetExecutingAssembly(), })
+                .Where(p => !p.IsDynamic)
 				.Select(x => x.Location)
 				.Select(x => MetadataReference.CreateFromFile(x));
 			var options = new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary);

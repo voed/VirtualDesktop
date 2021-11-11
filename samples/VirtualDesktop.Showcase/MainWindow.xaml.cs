@@ -16,6 +16,14 @@ namespace VirtualDesktopShowcase
 		{
 			this.InitializeComponent();
 			InitializeComObjects();
+
+			VirtualDesktop.CurrentChanged += (sender, args) => DeskList.SelectedIndex = args.NewDesktop.Index;
+
+			var desks = VirtualDesktop.GetDesktops();
+			foreach (var desk in desks)
+			{
+				DeskList.Items.Add(string.IsNullOrEmpty(desk.Name) ? $"<desktop {desk.Index}>" : desk.Name);
+			}
 		}
 
 		private static async void InitializeComObjects()
@@ -32,6 +40,8 @@ namespace VirtualDesktopShowcase
 			VirtualDesktop.CurrentChanged += (sender, args) => System.Diagnostics.Debug.WriteLine($"Desktop changed: {args.NewDesktop.Id}");
 			VirtualDesktop.Moved += (sender, args) => System.Diagnostics.Debug.WriteLine($"Desktop moved: {args.OldIndex} -> {args.NewIndex} ({args.Source.Id})");
 			VirtualDesktop.Renamed += (sender, args) => System.Diagnostics.Debug.WriteLine($"Desktop renamed: {args.OldName} -> {args.NewName} ({args.Source.Id})");
+
+			
 		}
 
 		private void CreateNew(object sender, RoutedEventArgs e)

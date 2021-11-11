@@ -31,18 +31,18 @@ namespace WindowsDesktop.Interop
 
 		IVirtualDesktop FindDesktop([In, MarshalAs(UnmanagedType.LPStruct)] Guid desktopId);
 
-		void Unknown1(IVirtualDesktop pDesktop, out IObjectArray pUnknown1, out IObjectArray pUnknown2);
+		void GetDesktopSwitchIncludeExcludeViews(IVirtualDesktop pDesktop, out IObjectArray pUnknown1, out IObjectArray pUnknown2);
 
-		void SetName(IVirtualDesktop pDesktop, HString chName);
+		void SetDesktopName(IVirtualDesktop pDesktop, HString chName);
 
-		void SetWallpaperPath(IVirtualDesktop pDesktop, HString chPath);
+		void SetDesktopWallpaper(IVirtualDesktop pDesktop, HString chPath);
 
-		void Unknown2(HString chText);
+		void UpdateWallpaperPathForAllDesktops(HString chText);
 
-		void Unknown3(IApplicationView pUnknown0, IApplicationView pUnknown1);
+		void CopyDesktopState(IApplicationView pUnknown0, IApplicationView pUnknown1);
 
-		int Unknown4();
+		int GetDesktopIsPerMonitor();
 
-		void Unknown5(int nNum);
+		void SetDesktopIsPerMonitor(int nNum);
 	}
 }

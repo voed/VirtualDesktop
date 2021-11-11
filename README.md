@@ -20,9 +20,9 @@ Install NuGet package(s).
 PM> Install-Package VirtualDesktop
 ```
 
-* [VirtualDesktop](https://www.nuget.org/packages/VirtualDesktop/) - Core classes for VirtualDesktop.
-* [VirtualDesktop.WPF](https://www.nuget.org/packages/VirtualDesktop.WPF/) - Provides extension methods for WPF [Window class](https://msdn.microsoft.com/en-us/library/system.windows.window(v=vs.110).aspx).
-* [VirtualDesktop.WinForms](https://www.nuget.org/packages/VirtualDesktop.WinForms/) - Provides extension methods for [Form class](https://msdn.microsoft.com/en-us/library/system.windows.forms.form(v=vs.110).aspx).
+* [VirtualDesktop.Net5](https://www.nuget.org/packages/VirtualDesktop.Net5/) - Core classes for VirtualDesktop.
+* [VirtualDesktop.WPF.Net5](https://www.nuget.org/packages/VirtualDesktop.WinForms.Net5/) - Provides extension methods for WPF [Window class](https://msdn.microsoft.com/en-us/library/system.windows.window(v=vs.110).aspx).
+* [VirtualDesktop.WinForms.Net5](https://www.nuget.org/packages/VirtualDesktop.WinForms.Net5/) - Provides extension methods for [Form class](https://msdn.microsoft.com/en-us/library/system.windows.forms.form(v=vs.110).aspx).
 
 
 

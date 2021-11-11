@@ -29,12 +29,12 @@ namespace WindowsDesktop.Interop
 
 		IVirtualDesktop FindDesktop([In, MarshalAs(UnmanagedType.LPStruct)] Guid desktopId);
 
-		void Unknown1(IVirtualDesktop pDesktop, out IObjectArray pUnknown1, out IObjectArray pUnknown2);
+		void GetDesktopSwitchIncludeExcludeViews(IVirtualDesktop pDesktop, out IObjectArray pUnknown1, out IObjectArray pUnknown2);
 
-		void SetName(IVirtualDesktop pDesktop, HString chName);
+		void SetDesktopName(IVirtualDesktop pDesktop, HString chName);
 
-		void Unknown2(IApplicationView pUnknown0, IApplicationView pUnknown1);
+		void CopyDesktopState(IApplicationView pUnknown0, IApplicationView pUnknown1);
 
-		int Unknown3();
+		int GetDesktopIsPerMonitor();
 	}
 }
